@@ -51,4 +51,4 @@ source 'https://rails-assets.org' do
       gem 'rails-assets-tether', '>= 1.1.0'
 end
 
-gem 'gcloud'
+gem 'gcloud', '~> 0.7.2'
