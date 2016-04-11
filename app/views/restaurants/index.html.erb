@@ -1,0 +1,11 @@
+<% @restaurants.each do |restaurant| %>
+    <div class="media book">
+      <%= link_to restaurant_path(restaurant) do %>
+          <div class="media-body">
+            <%#= restaurant.inspect %>
+            <p><%= restaurant.id.to_s %></p>
+            <p><%= restaurant.info %></p>
+          </div>
+      <% end %>
+    </div>
+<% end %>

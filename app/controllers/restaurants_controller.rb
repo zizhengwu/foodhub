@@ -6,7 +6,6 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants, @cursor = Restaurant.query limit: PER_PAGE, cursor: params[:cursor]
-    puts 'hi'
   end
 
   def show
