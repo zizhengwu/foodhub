@@ -2,7 +2,7 @@ require 'gcloud/datastore'
 require 'json'
 
 class Restaurant
-  attr_accessor :id, :info, :name
+  attr_accessor :id, :info, :name, :full_address, :categories, :city
 
   def self.dataset
     @dataset ||= Gcloud.datastore(
@@ -41,7 +41,9 @@ class Restaurant
       restaurant.send "#{name}=", value
     end
     restaurant_info_hash = JSON.parse(restaurant.info)
-    restaurant.name = restaurant_info_hash['name']
+    ['name', 'full_address', 'categories', 'city'].each do |attribute|
+      restaurant.send "#{attribute}=", restaurant_info_hash[attribute]
+    end
     restaurant
   end
 end

@@ -13,14 +13,14 @@
     <nav>
       <ul class="nav nav-pills pull-xs-right">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Foodhub<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
           <%= form_tag({controller: "restaurants", action: "search"}, method: "get") do %>
-              <p><%= text_field_tag(:q, nil, class: 'form-control') %></p>
+              <p><%= text_field_tag(:q, nil, {class: 'form-control'}) %></p>
         </li>
         <li class="nav-item">
           <%= submit_tag("Search", class: 'btn btn-primary') %>
@@ -29,7 +29,7 @@
 
       </ul>
     </nav>
-    <h3 class="text-muted">Project name</h3>
+    <h3 class="text-muted">Foodhub</h3>
   </div>
 </div> <!-- /container -->
 <%= yield %>
