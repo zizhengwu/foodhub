@@ -14,7 +14,8 @@ class RestaurantsController < ApplicationController
 
 
   def search
-    @reviews = Review.search_by_keyword(params[:q].downcase)
+    @food = params[:q]
+    @reviews = Review.search_by_keyword(@food.downcase)
     @restaurants = []
     @reviews.each do |review|
       @restaurants.append(Restaurant.retrieve(review.businessId))
