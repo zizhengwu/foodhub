@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-
+    @restaurant = Restaurant.retrieve(params[:id])
   end
 
 

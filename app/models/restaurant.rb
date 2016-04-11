@@ -25,6 +25,14 @@ class Restaurant
     return restaurants, next_cursor
   end
 
+  def self.retrieve(business_id)
+
+    query = Gcloud::Datastore::Key.new 'Business', business_id
+    entry = dataset.lookup query
+
+    from_entity entry.first if entry.any?
+  end
+
   def self.from_entity entity
     restaurant = Restaurant.new
     restaurant.id = entity.key.name
