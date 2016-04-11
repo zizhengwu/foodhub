@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NewFood</title>
+  <title>Foodhub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,8 +18,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
+        <%= form_tag({controller: "restaurants", action: "search"}, method: "get") do %>
         <li class="nav-item">
-          <%= form_tag({controller: "restaurants", action: "search"}, method: "get") do %>
               <p><%= text_field_tag(:q, nil, {class: 'form-control'}) %></p>
         </li>
         <li class="nav-item">
