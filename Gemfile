@@ -52,3 +52,5 @@ source 'https://rails-assets.org' do
 end
 
 gem 'gcloud', '~> 0.7.2'
+
+gem 'rails_12factor', group: :production
