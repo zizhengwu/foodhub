@@ -1,7 +1,8 @@
-require "gcloud/datastore"
+require 'gcloud/datastore'
+require 'json'
 
 class Restaurant
-  attr_accessor :id, :info
+  attr_accessor :id, :info, :name
 
   def self.dataset
     @dataset ||= Gcloud.datastore(
@@ -39,6 +40,8 @@ class Restaurant
     entity.properties.to_hash.each do |name, value|
       restaurant.send "#{name}=", value
     end
+    restaurant_info_hash = JSON.parse(restaurant.info)
+    restaurant.name = restaurant_info_hash['name']
     restaurant
   end
 end
