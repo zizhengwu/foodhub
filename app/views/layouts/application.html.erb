@@ -18,14 +18,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <%= form_tag({controller: "restaurants", action: "search"}, method: "get") do %>
+
         <li class="nav-item">
-              <p><%= text_field_tag(:q, nil, {class: 'form-control'}) %></p>
+        <%= form_tag({controller: "restaurants", action: "search"}, {class: 'form-group', method: "get"}) do %>
+          <%= text_field_tag(:q, nil, {class: 'form-control', placeholder: 'food here'}) %>
+        <% end %>
         </li>
-        <li class="nav-item">
-          <%= submit_tag("Search", class: 'btn btn-primary') %>
-        </li>
-          <% end %>
 
       </ul>
     </nav>

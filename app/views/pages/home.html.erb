@@ -4,7 +4,7 @@
     <h1 class="display-3">What to eat in your neighborhood?</h1>
 
     <%= form_tag({controller: "restaurants", action: "search"}, method: "get") do %>
-        <p><%= text_field_tag(:q, nil, {class: 'form-control', placeholder: "Your favourite food like 'Sushi'"}) %></p>
+        <p><%= text_field_tag(:q, nil, {class: 'form-control', placeholder: 'Your favourite food like "Sushi"'}) %></p>
         <%= submit_tag("Search", class: 'btn btn-lg btn-success') %>
     <% end %>
   </div>

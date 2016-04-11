@@ -11,6 +11,12 @@ $color_gallery_approx: #eceeef;
 $white: #fff;
 $color_black_haze_approx: #f7f7f7;
 
+.navbar-form .form-group input {
+  width: calc(100% - 50px);
+  display: inline-block;
+  vertical-align: top;
+}
+
 .jumbotron {
   padding-top: 6rem;
   padding-bottom: 6rem;
