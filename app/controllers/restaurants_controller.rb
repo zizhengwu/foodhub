@@ -14,6 +14,6 @@ class RestaurantsController < ApplicationController
 
 
   def search
-
+    @reviews = Review.search_by_keyword(params[:q])
   end
 end

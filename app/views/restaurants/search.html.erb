@@ -1,0 +1,12 @@
+<% @reviews.each do |review| %>
+    <div class="media book">
+      <%= link_to restaurant_path(review) do %>
+          <div class="media-body">
+            <%#= restaurant.inspect %>
+            <p><%= review.id.to_s %></p>
+            <p><%= review.businessId %></p>
+            <p><%= review.positive %></p>
+          </div>
+      <% end %>
+    </div>
+<% end %>

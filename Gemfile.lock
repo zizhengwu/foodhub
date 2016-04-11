@@ -176,7 +176,7 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
-    spring (1.7.0)
+    spring (1.6.4)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -215,7 +215,7 @@ DEPENDENCIES
   rails-assets-tether (>= 1.1.0)!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  spring
+  spring (~> 1.6.3)
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
