@@ -17,8 +17,12 @@ class RestaurantsController < ApplicationController
     @food = params[:q]
     @reviews = Review.search_by_keyword(@food.downcase)
     @restaurants = []
+    threads = []
     @reviews.each do |review|
-      @restaurants.append(Restaurant.retrieve(review.businessId))
+      threads << Thread.new do
+        @restaurants.append(Restaurant.retrieve(review.businessId))
+      end
     end
+    threads.map(&:join)
   end
 end
