@@ -17,6 +17,10 @@ class Review
     results = dataset.run query
     reviews   = results.map {|entity| Review.from_entity entity }
 
+    reviews.sort_by! do |review|
+      -review.positive
+    end
+
     return reviews
   end
 

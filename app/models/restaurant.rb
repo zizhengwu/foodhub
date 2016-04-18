@@ -12,7 +12,7 @@ class Restaurant
 
   def self.query options = {}
     query = Gcloud::Datastore::Query.new
-    query.kind "Business"
+    query.kind 'Business'
     # query.limit options[:limit]   if options[:limit]
     # query.cursor options[:cursor] if options[:cursor]
 
