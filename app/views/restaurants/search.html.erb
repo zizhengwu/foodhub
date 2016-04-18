@@ -15,11 +15,12 @@
     <div class="row">
       <% @reviews.zip(@restaurants).each do |review, restaurant| %>
           <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <!--<img data-src="holder.js/100px280/thumb" alt="Card image cap">-->
             <%= link_to restaurant_path(restaurant.id) do %>
             <p class="card-text"><%= restaurant.name %></p>
             <% end %>
             <p class="card-text">Score: <%= review.positive %></p>
+            <p class="card-text"><%= review.positive %></p>
 
             <%# end %>
           </div>
