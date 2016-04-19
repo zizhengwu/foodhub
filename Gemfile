@@ -54,3 +54,5 @@ end
 gem 'gcloud', '~> 0.7.2'
 
 gem 'rails_12factor', group: :production
+
+gem 'gmaps4rails'

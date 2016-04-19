@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.retrieve(params[:id])
+    @reviews = ReviewText.search_by_business(params[:id])
   end
 
 
@@ -18,9 +19,12 @@ class RestaurantsController < ApplicationController
     @reviews = Review.search_by_keyword(@food.downcase)
     @restaurants = []
     threads = []
+    semaphore = Mutex.new
     @reviews.each do |review|
       threads << Thread.new do
-        @restaurants.append(Restaurant.retrieve(review.businessId))
+        semaphore.synchronize {
+          @restaurants.append(Restaurant.retrieve(review.businessId))
+        }
       end
     end
     threads.map(&:join)
