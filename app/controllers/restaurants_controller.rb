@@ -21,12 +21,12 @@ class RestaurantsController < ApplicationController
     threads = []
     semaphore = Mutex.new
     @reviews.each do |review|
-      threads << Thread.new do
-        semaphore.synchronize {
+      # threads << Thread.new do
+        # semaphore.synchronize {
           @restaurants.append(Restaurant.retrieve(review.businessId))
-        }
-      end
+        # }
+      # end
     end
-    threads.map(&:join)
+    # threads.map(&:join)
   end
 end
