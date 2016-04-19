@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.retrieve(params[:id])
+    @reviews = ReviewText.search_by_business(params[:id])
   end
 
 

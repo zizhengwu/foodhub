@@ -5,3 +5,151 @@
   margin-bottom: 0rem;
   border: 0;
 }
+
+.top-buffer { margin-top:20px; }
+
+//colors
+$color_gallery_approx: #eeeeee;
+$color_quill_gray_approx: #d4d4d4;
+$black_17_5: rgba(0, 0, 0, 0.175);
+$color_celeste_approx: #ccc;
+$white: #fff;
+$color_mountain_mist_approx: #999999;
+$color_astral_approx: #2e6da4;
+$color_goblin_approx: #3f903f;
+$color_casablanca_approx: #f0ad4e;
+$color_chestnut_rose_approx: #d9534f;
+$color_viking_approx: #5bc0de;
+
+.timeline {
+  list-style: none;
+  padding: 20px 0;
+  position: relative;
+  &:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: $color_gallery_approx;
+    left: 50%;
+    margin-left: -1.5px;
+  }
+  > li {
+    margin-bottom: 20px;
+    position: relative;
+    &:before {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+    > {
+      .timeline-panel {
+        width: 46%;
+        float: left;
+        border: 1px solid $color_quill_gray_approx;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 2px;
+        padding: 20px;
+        position: relative;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 0 1px 6px $black_17_5;
+        &:before {
+          position: absolute;
+          top: 26px;
+          right: -15px;
+          display: inline-block;
+          border-top: 15px solid transparent;
+          border-left: 15px solid $color_celeste_approx;
+          border-right: 0 solid $color_celeste_approx;
+          border-bottom: 15px solid transparent;
+          content: " ";
+        }
+        &:after {
+          position: absolute;
+          top: 27px;
+          right: -14px;
+          display: inline-block;
+          border-top: 14px solid transparent;
+          border-left: 14px solid $white;
+          border-right: 0 solid $white;
+          border-bottom: 14px solid transparent;
+          content: " ";
+        }
+      }
+      .timeline-badge {
+        color: $white;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+        text-align: center;
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        margin-left: -25px;
+        background-color: $color_mountain_mist_approx;
+        z-index: 100;
+        //Instead of the line below you could use @include border-top-right-radius($radius)
+        border-top-right-radius: 50%;
+        //Instead of the line below you could use @include border-top-left-radius($radius)
+        border-top-left-radius: 50%;
+        //Instead of the line below you could use @include border-bottom-right-radius($radius)
+        border-bottom-right-radius: 50%;
+        //Instead of the line below you could use @include border-bottom-left-radius($radius)
+        border-bottom-left-radius: 50%;
+      }
+    }
+    &.timeline-inverted > .timeline-panel {
+      float: right;
+      &:before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+      }
+      &:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+      }
+    }
+  }
+}
+.timeline-badge {
+  &.primary {
+    background-color: $color_astral_approx !important;
+  }
+  &.success {
+    background-color: $color_goblin_approx !important;
+  }
+  &.warning {
+    background-color: $color_casablanca_approx !important;
+  }
+  &.danger {
+    background-color: $color_chestnut_rose_approx !important;
+  }
+  &.info {
+    background-color: $color_viking_approx !important;
+  }
+}
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body {
+  > p {
+    margin-bottom: 0;
+    + p {
+      margin-top: 5px;
+    }
+  }
+  > ul {
+    margin-bottom: 0;
+  }
+}
